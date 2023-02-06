@@ -54,9 +54,9 @@ output "demo1" {
 }
 
 #variables from shell env variables
-variable "Shell_env" {
+variable "demo2" {
   default = null
 }
-output "Shell_env" {
-  value = var.Shell_env
+output "demo2" {
+  value = var.demo2
 }
