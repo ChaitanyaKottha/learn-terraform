@@ -7,8 +7,12 @@ output "sample" {
 }
 
 # Default variable types - string datatype
-varaible "sample1"{
+variable "sample1" {
   default = "Hello"
+}
+
+output "sample1" {
+  value = var.sample1
 }
 # number datatype
 variable "sample2" {
@@ -26,3 +30,18 @@ variable "sample3" {
      true
    ]
  }
+output "sample5" {
+  value = var.sample[1]
+}
+# map variable type
+variable "sample6" {
+  default = {
+    string  = "abc"
+    number  = 100
+    boolean = true
+  }
+}
+
+output "sample6" {
+  value= var.sample6["string"]
+}
