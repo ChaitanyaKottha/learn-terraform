@@ -52,3 +52,11 @@ variable "demo1" {
 output "demo1" {
   value = var.demo1
 }
+
+#variables from shell env variables
+variable "Shell_env" {
+  default = null
+}
+output "Shell_env" {
+  value = var.Shell_env
+}
