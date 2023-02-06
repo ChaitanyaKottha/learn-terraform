@@ -45,3 +45,7 @@ variable "sample6" {
 output "sample6" {
   value= var.sample6["string"]
 }
+# variable from .tfvars file
+variable "demo1" {
+
+}
