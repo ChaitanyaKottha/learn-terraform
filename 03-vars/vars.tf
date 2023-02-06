@@ -31,7 +31,7 @@ variable "sample3" {
    ]
  }
 output "sample5" {
-  value = var.sample[1]
+  value = var.sample5[1]
 }
 # map variable type
 variable "sample6" {
