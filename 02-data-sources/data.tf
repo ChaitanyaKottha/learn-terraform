@@ -10,5 +10,7 @@ output "ami"{
 
 data "aws_instance" "foo" {
   instance_id = "i-0d5872d49a40a35bf"
-
+}
+output "instance"{
+  value = data.aws_instance.foo.public_ip
 }
