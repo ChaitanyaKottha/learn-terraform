@@ -1,0 +1,9 @@
+- name: create instance
+  hosts: localhost
+  tasks:
+    - name: start a instance
+      amazon.aws.ec2_instance:
+        instance_type: "t3.micro"
+        image_id: ami-0a017d8ceb274537d
+        tags:
+          Environment: ansible-test
