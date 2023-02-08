@@ -3,7 +3,7 @@ resource "aws_instance" "test" {
   ami = data.aws_ami.centos8.id
   instance_type = "t3.micro"
   tags = {
-    Name = "test-centos8"
+    Name = var.components
   }
 }
 
