@@ -1,7 +1,6 @@
 resource "aws_instance" "web" {
-  for_each      = var.components
   ami           = data.aws_ami.centos8.id
-  instance_type = each.value.instance_type
+  instance_type = var.instance_type
 
   tags = {
     Name = var.name
@@ -15,32 +14,11 @@ data "aws_ami" "centos8" {
   owners      = ["973714476881"]
 }
 
-variable "instance_type" {}
+variable "instance_type" {
+  default = "t3.micro"
+}
 variable "name" {}
 
 output "ec2" {
   value = aws_instance.web
 }
-#output "publicip" {
-#  # without count
-#  #value = aws_instance.web.public_ip
-#
-#  # with count
-#
-#  value = {
-#    for k, v in aws_instance.web : k => v.public_ip
-#  }
-#}
-#
-#variable "components" {
-#  default = {
-#    cart = {
-#      name          = "cart",
-#      instance_type = "t3.small"
-#    }
-#    catalogue = {
-#      name          = "catalogue",
-#      instance_type = "t3.micro"
-#    }
-#  }
-#}
