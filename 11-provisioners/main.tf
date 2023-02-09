@@ -22,7 +22,7 @@ resource "null_resource" "provision" {
       password = "Devops321"
     }
     inline = [
-      "false"
+      "echo hello"
     ]
   }
 }
