@@ -21,6 +21,15 @@ output "public_ip" {
 }
 #map
 variable "components" {
-  default = ["cart","catalogue"]
+  default = {
+    cart = {
+      name = "cart",
+      instance_type = "t3.micro"
+    }
+    catalogue = {
+      name = "catalogue",
+      instance_type = "t3.small"
+    }
+  }
 
 }
