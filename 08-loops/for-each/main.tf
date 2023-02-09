@@ -21,6 +21,3 @@ data "aws_ami" "centos8" {
 #     for k, v in aws_instance.test : k => v.public_ip
 #   }
 #}
-
-variable "instance_type" {}
-variable "name" {}
