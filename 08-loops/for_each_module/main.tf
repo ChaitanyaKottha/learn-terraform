@@ -19,3 +19,11 @@ module "ec2" {
   instance_type = each.value.instance_type
   name = each.value.name
 }
+## Always iterate modules, not resources.
+## Always map the data and use for_each loop
+
+output "publicip" {
+  value = {
+    for k, v in module.ec2 : k => v["ec2"].public_ip
+  }
+}
