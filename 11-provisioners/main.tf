@@ -13,9 +13,11 @@ resource "aws_instance" "test" {
   tags = {
     Name = "test-centos8"
   }
+}
+resource "null_resource" "provision" {
   provisioner "remote-exec" {
     connection {
-      host = self.public_ip
+      host = aws_instance.test.public_ip
       user = "centos"
       password = "Devops321"
     }
@@ -24,7 +26,6 @@ resource "aws_instance" "test" {
     ]
   }
 }
-
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
