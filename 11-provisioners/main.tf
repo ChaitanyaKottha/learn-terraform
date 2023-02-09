@@ -22,7 +22,7 @@ resource "null_resource" "provision" {
     connection {
       host = aws_instance.test.public_ip
       user = "centos"
-      password = "Devops321"
+      password = "DevOps321"
     }
     inline = [
       "echo hello"
